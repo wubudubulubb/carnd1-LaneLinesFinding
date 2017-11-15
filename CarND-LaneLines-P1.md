@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 [image_blur]: ./test_images_output/Gauss7.png
 [image_canny]: ./test_images_output/CannyEdge.png
 [image_region]: ./test_images_output/Region.png
-[image_hough]: ./test_images_output/Hough.png
+[image_hough]: ./test_images_output/HoughLines.png
 
 ---
 
