@@ -10,7 +10,6 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
-
 [image1]: ./test_images_output/mask_output.png
 [image_gray]: ./test_images_output/gray_scale.png
 [image_blur]: ./test_images_output/Gauss7.png
@@ -28,27 +27,27 @@ My pipeline consisted of 10 steps.
 
 First I applied a color mask to the image, to extract the white and yellow features from the image, as we have both white and yellow lane markings. I selected the thresholds by trial-error in the JupyterNotebook, using the example still images.
 
-![color mask output]:[image1]
+![color mask output][image1]
 
 Second, I converted the images to grayscale, in order to use one channel for the next steps.
 
-![gray scale output]:[image_gray]
+![gray scale output][image_gray]
 
 Third, I applied a Gaussian blur with kernel size = 7. This value, again, was found by trial and error on the example still images. 
 
-![Gaussian blur]:[image_blur]
+![Gaussian blur][image_blur]
 
 Then I applied a Canny edge detector to extract the edges from the current image. The thresholds were tuned by trial-error on still image samples
 
-![Canny edge]:[image_canny]
+![Canny edge][image_canny]
 
 Then I applied a region filter. These values were selected using the still images. So that we can only find lines in the region of interest.
 
-![Region filter output]:[image_region]
+![Region filter output][image_region]
 
 Then I used the Hough Transform to find the lines in the processed image.
 
-![Hough transform]:[image_hough]
+![Hough transform][image_hough]
 
 The output of the Hough Transform consists of all the lines in the image. In the next step, I separated lines on the left and on the right to different containers, using the slope info. Right lines would have positive slope, since the origin is top left).
 I left out the lines having slope absolute value smaller than a threshold, as we don't have parallel lanes to the horizontal.Next, I took the average of slopes and y-offsets of the lines in each line-container. So now, we have one set of (y-offset, slope) pairs for right and left lines.
